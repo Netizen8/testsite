@@ -563,6 +563,8 @@
       overflow: hidden;
       position: relative;
       box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
     }
 
     .shot::after {
@@ -767,29 +769,6 @@
             </div>
             <div class="term" id="terminal" aria-live="polite" aria-atomic="false"></div>
           </div>
-          <div class="floating">
-            <div class="card">
-              <strong>Exploit heatmap</strong>
-              <div style="height: 60px; margin-top:6px;">
-                <svg viewBox="0 0 200 60" width="100%" height="100%">
-                  <defs>
-                    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0" stop-color="#22d3ee" />
-                      <stop offset="1" stop-color="#7c3aed" />
-                    </linearGradient>
-                  </defs>
-                  <polyline id="spark" fill="none" stroke="url(#grad)" stroke-width="2"
-                    points="0,50 20,45 40,46 60,40 80,30 100,38 120,22 140,28 160,18 180,26 200,14" />
-                </svg>
-              </div>
-              <div class="chip"><span class="dot green"></span>Low risk regions</div>
-            </div>
-            <div class="card">
-              <strong>Session Trust</strong>
-              <div class="chip"><span class="dot" style="background:#06b6d4"></span>Token pinning</div>
-              <div class="chip"><span class="dot" style="background:#22c55e"></span>Server‑authoritative</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -938,13 +917,13 @@
         </div>
         <div class="showcase reveal">
           <div class="shot">
-            <div class="overlay">
+            <div
+              style="padding: 14px 14px 0; display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--border);">
               <span class="chip"><span class="dot green"></span>Server‑authoritative</span>
               <span class="chip"><span class="dot" style="background:#06b6d4"></span>Session attestation</span>
               <span class="chip"><span class="dot" style="background:#f59e0b"></span>Anomaly sandbox</span>
             </div>
-            <div class="term"
-              style="height: 100%; background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3));">
+            <div class="term" style="flex: 1; background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3));">
               > audit export | tail -f<br>
               [policy] net.ruleset:v4 applied (minecraft, roblox, ue)<br>
               [edge] burst remote spam → rate‑limit actor: 3s<br>
