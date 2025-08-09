@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Whirl.GG — Secure, Optimize, and Scale Game Experiences</title>
-  <meta name="description" content="Whirl.GG builds secure, optimized gaming experiences across Minecraft, Roblox, Unreal Engine, and more. Anti-cheat by design. Performance by default." />
+  <meta name="description"
+    content="Whirl.GG builds secure, optimized gaming experiences across Minecraft, Roblox, Unreal Engine, and more. Anti-cheat by design. Performance by default." />
   <meta property="og:title" content="Whirl.GG — Secure, Optimize, and Scale Game Experiences">
-  <meta property="og:description" content="Anti‑cheat, exploit protection, and sleek UX for Minecraft, Roblox, Unreal Engine, and more.">
+  <meta property="og:description"
+    content="Anti‑cheat, exploit protection, and sleek UX for Minecraft, Roblox, Unreal Engine, and more.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Whirl.GG">
   <meta name="theme-color" content="#0b0f1a">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Cpath d='M20 34c7 12 24 6 24-6 0-11-15-16-22-8' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Cpath d='M20 34c7 12 24 6 24-6 0-11-15-16-22-8' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-0: #0b0f1a;
@@ -26,263 +32,649 @@
       --good: #22c55e;
       --warn: #f59e0b;
       --bad: #ef4444;
-      --glass: rgba(255,255,255,0.06);
-      --glass-strong: rgba(255,255,255,0.1);
-      --border: rgba(148,163,184,0.18);
-      --shadow: 0 10px 30px rgba(2,8,23,0.45);
+      --glass: rgba(255, 255, 255, 0.06);
+      --glass-strong: rgba(255, 255, 255, 0.1);
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 10px 30px rgba(2, 8, 23, 0.45);
       --radius: 14px;
       --radius-sm: 12px;
       --radius-lg: 18px;
       --container: 1200px;
     }
+
     [data-theme="light"] {
       --bg-0: #f8fafc;
       --bg-1: #f1f5f9;
       --bg-2: #eef2ff;
       --text: #0b1220;
       --muted: #475569;
-      --glass: rgba(0,0,0,0.04);
-      --glass-strong: rgba(0,0,0,0.06);
-      --border: rgba(2,6,23,0.12);
-      --shadow: 0 10px 30px rgba(2,8,23,0.12);
+      --glass: rgba(0, 0, 0, 0.04);
+      --glass-strong: rgba(0, 0, 0, 0.06);
+      --border: rgba(2, 6, 23, 0.12);
+      --shadow: 0 10px 30px rgba(2, 8, 23, 0.12);
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
       color: var(--text);
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.22), transparent 60%),
-                  radial-gradient(900px 600px at 90% 10%, rgba(6,182,212,.18), transparent 60%),
-                  linear-gradient(180deg, var(--bg-0), var(--bg-1));
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(124, 58, 237, .22), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(6, 182, 212, .18), transparent 60%),
+        linear-gradient(180deg, var(--bg-0), var(--bg-1));
+      background-attachment: fixed;
       overflow-x: hidden;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: var(--container); padding: 0 20px; margin: 0 auto; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: var(--container);
+      padding: 0 20px;
+      margin: 0 auto;
+    }
 
     /* Animated conic swirl backdrop */
     .swirl {
-      position: fixed; inset: -30vmax;
-      background: conic-gradient(from 0deg, rgba(124,58,237,0.08), rgba(6,182,212,0.08), rgba(34,211,238,0.06), rgba(124,58,237,0.08));
+      position: fixed;
+      inset: -30vmax;
+      background: conic-gradient(from 0deg, rgba(124, 58, 237, 0.08), rgba(6, 182, 212, 0.08), rgba(34, 211, 238, 0.06), rgba(124, 58, 237, 0.08));
       filter: blur(60px) saturate(140%);
       animation: spin 60s linear infinite;
       z-index: -2;
       pointer-events: none;
       transform-origin: 50% 50%;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* Noise overlay */
     .noise {
-      position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: .08; mix-blend-mode: overlay;
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .08;
+      mix-blend-mode: overlay;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
       background-size: 140px 140px;
     }
 
     /* Nav */
     .nav {
-      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
       background: linear-gradient(180deg, var(--glass-strong), transparent);
       border-bottom: 1px solid var(--border);
     }
+
     .nav-inner {
-      display: flex; align-items: center; justify-content: space-between; height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
     }
+
     .brand {
-      display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
     }
+
     .brand-logo {
-      width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
       background: linear-gradient(135deg, var(--brand-a), var(--brand-b));
       box-shadow: var(--shadow);
     }
-    .brand-logo svg { filter: drop-shadow(0 2px 6px rgba(124,58,237,.4)); }
-    .nav-links {
-      display: flex; gap: 20px; align-items: center;
+
+    .brand-logo svg {
+      filter: drop-shadow(0 2px 6px rgba(124, 58, 237, .4));
     }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
     .nav-links a {
       color: var(--muted);
-      font-weight: 600; font-size: 14px; letter-spacing: .2px;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: .2px;
     }
-    .nav-links a:hover { color: var(--text); }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px;
-      border: 1px solid var(--border); background: var(--glass); color: var(--text); font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--glass);
+      color: var(--text);
+      font-weight: 700;
       box-shadow: var(--shadow);
     }
+
     .btn.primary {
       background: linear-gradient(135deg, var(--brand-a), var(--brand-b));
-      border: none; color: white;
+      border: none;
+      color: white;
     }
-    .btn.ghost { background: transparent; }
+
+    .btn.ghost {
+      background: transparent;
+    }
+
     .theme-toggle {
-      border-radius: 999px; padding: 10px 12px;
-      display: inline-flex; align-items: center; gap: 8px; font-weight: 700;
-      background: var(--glass); border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      background: var(--glass);
+      border: 1px solid var(--border);
     }
-    .burger { display: none; }
+
+    .burger {
+      display: none;
+    }
+
     @media (max-width: 980px) {
-      .nav-links { display: none; }
-      .burger { display: flex; gap: 10px; align-items: center; }
-      .mobile-menu {
-        position: fixed; inset: 64px 16px auto 16px; border: 1px solid var(--border);
-        background: var(--bg-1); border-radius: 16px; padding: 16px; display: none; z-index: 49;
+      .nav-links {
+        display: none;
       }
-      .mobile-menu a { display: block; padding: 12px 10px; color: var(--muted); border-radius: 8px; }
-      .mobile-menu a:hover { color: var(--text); background: var(--glass); }
-      .mobile-menu.open { display: block; }
+
+      .burger {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        inset: 64px 16px auto 16px;
+        border: 1px solid var(--border);
+        background: var(--bg-1);
+        border-radius: 16px;
+        padding: 16px;
+        display: none;
+        z-index: 49;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 12px 10px;
+        color: var(--muted);
+        border-radius: 8px;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--text);
+        background: var(--glass);
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
     }
 
     /* Hero */
-    .hero { position: relative; padding: 72px 0 24px; }
+    .hero {
+      position: relative;
+      padding: 72px 0 24px;
+    }
+
     .hero-grid {
-      display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: center;
     }
+
     @media (max-width: 980px) {
-      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
     }
+
     .headline {
-      font-size: clamp(32px, 4vw, 56px); font-weight: 800; line-height: 1.06; letter-spacing: -0.02em;
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
     }
-    .headline .grad { background: linear-gradient(90deg, var(--brand-a), var(--brand-b), var(--brand-c));
-      -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .subhead { color: var(--muted); font-size: 18px; margin: 16px 0 26px; }
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .headline .grad {
+      background: linear-gradient(90deg, var(--brand-a), var(--brand-b), var(--brand-c));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subhead {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 16px 0 26px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .hero-badges {
-      margin-top: 26px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; color: var(--muted);
+      margin-top: 26px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
     }
+
     .stat {
-      display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px;
-      background: var(--glass); border: 1px solid var(--border);
-      font-weight: 700; color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      font-weight: 700;
+      color: var(--text);
     }
-    .stat small { color: var(--muted); font-weight: 600; display: block; font-size: 12px; }
+
+    .stat small {
+      color: var(--muted);
+      font-weight: 600;
+      display: block;
+      font-size: 12px;
+    }
 
     /* Hero visual */
     .hero-visual {
-      position: relative; min-height: 420px; border-radius: var(--radius-lg);
-      background: radial-gradient(600px 300px at 70% 0%, rgba(124,58,237,.18), transparent),
-                  linear-gradient(180deg, var(--bg-2), rgba(2,8,23,.2));
+      position: relative;
+      min-height: 420px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(600px 300px at 70% 0%, rgba(124, 58, 237, .18), transparent),
+        linear-gradient(180deg, var(--bg-2), rgba(2, 8, 23, .2));
       border: 1px solid var(--border);
-      overflow: hidden; box-shadow: var(--shadow);
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
+
     .hero-visual .glass {
-      position: absolute; inset: 14px; border-radius: 16px; background: rgba(10,15,28,.45);
-      border: 1px solid var(--border); backdrop-filter: blur(10px);
-      display: grid; grid-template-rows: auto 1fr; overflow: hidden;
+      position: absolute;
+      inset: 14px;
+      border-radius: 16px;
+      background: rgba(10, 15, 28, .45);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
     }
+
     .toolbar {
-      display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 1px dashed var(--border);
     }
-    .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot.red { background: #ef4444; } .dot.yellow { background: #f59e0b; } .dot.green { background: #22c55e; }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot.red {
+      background: #ef4444;
+    }
+
+    .dot.yellow {
+      background: #f59e0b;
+    }
+
+    .dot.green {
+      background: #22c55e;
+    }
+
     .term {
       font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 13px; line-height: 1.55; padding: 12px; overflow: auto; color: #cbd5e1;
+      font-size: 13px;
+      line-height: 1.55;
+      padding: 12px;
+      overflow: auto;
+      color: #cbd5e1;
     }
-    .log-line { opacity: .9; }
-    .log-line .time { color: #64748b; }
-    .log-line.ok { color: #a7f3d0; }
-    .log-line.warn { color: #fde68a; }
-    .log-line.bad { color: #fecaca; }
+
+    .log-line {
+      opacity: .9;
+    }
+
+    .log-line .time {
+      color: #64748b;
+    }
+
+    .log-line.ok {
+      color: #a7f3d0;
+    }
+
+    .log-line.warn {
+      color: #fde68a;
+    }
+
+    .log-line.bad {
+      color: #fecaca;
+    }
+
     .floating {
-      position: absolute; right: 10px; bottom: 10px; display: grid; gap: 10px; width: 200px;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      display: grid;
+      gap: 10px;
+      width: 200px;
     }
+
     .card {
-      padding: 12px; border-radius: 14px; background: var(--glass); border: 1px solid var(--border);
-      box-shadow: var(--shadow); color: var(--text); transform: translateZ(0);
+      padding: 12px;
+      border-radius: 14px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      color: var(--text);
+      transform: translateZ(0);
     }
-    .tilt { transition: transform .15s ease; will-change: transform; }
+
+    .tilt {
+      transition: transform .15s ease;
+      will-change: transform;
+    }
+
     .chip {
-      display: inline-flex; align-items: center; gap: 8px; font-size: 12px; padding: 6px 10px;
-      border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: var(--glass);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--glass);
     }
-    .chip .dot { width: 8px; height: 8px; }
+
+    .chip .dot {
+      width: 8px;
+      height: 8px;
+    }
 
     /* Sections */
-    section { padding: 64px 0; }
-    .section-head {
-      display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 28px;
+    section {
+      padding: 64px 0;
     }
-    .section-title { font-size: clamp(22px, 3vw, 32px); font-weight: 800; }
-    .section-desc { color: var(--muted); max-width: 720px; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 800;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 720px;
+    }
 
     /* Features grid */
     .grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
-    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .feature {
-      padding: 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--glass);
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--glass);
     }
-    .feature h3 { margin: 10px 0 6px; font-size: 18px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .feature h3 {
+      margin: 10px 0 6px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .icon {
-      width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: 8px;
-      background: linear-gradient(135deg, rgba(124,58,237,.18), rgba(6,182,212,.18));
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, .18), rgba(6, 182, 212, .18));
       border: 1px solid var(--border);
     }
 
     /* Platforms */
-    .platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    @media (max-width: 1100px) { .platforms { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 700px) { .platforms { grid-template-columns: 1fr; } }
-    .platform {
-      border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; background: var(--glass);
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
     }
-    .platform h4 { margin: 10px 0 6px; }
-    .platform .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+    @media (max-width: 1100px) {
+      .platforms {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .platforms {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .platform {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--glass);
+    }
+
+    .platform h4 {
+      margin: 10px 0 6px;
+    }
+
+    .platform .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
 
     /* Showcase */
     .showcase {
-      display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; align-items: stretch;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
     }
+
     .shot {
-      border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, var(--bg-2), transparent);
-      min-height: 260px; overflow: hidden; position: relative; box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, var(--bg-2), transparent);
+      min-height: 260px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
     }
+
     .shot::after {
-      content: ""; position: absolute; inset: 0; background:
-        radial-gradient(400px 200px at 20% 10%, rgba(124,58,237,.18), transparent 60%),
-        radial-gradient(400px 200px at 80% 90%, rgba(6,182,212,.15), transparent 60%);
-      mix-blend-mode: screen; pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(400px 200px at 20% 10%, rgba(124, 58, 237, .18), transparent 60%),
+        radial-gradient(400px 200px at 80% 90%, rgba(6, 182, 212, .15), transparent 60%);
+      mix-blend-mode: screen;
+      pointer-events: none;
     }
+
     .shot .overlay {
-      position: absolute; right: 14px; top: 14px; display: flex; gap: 10px; flex-wrap: wrap;
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     /* Pricing/CTA */
     .cta {
-      display: grid; grid-template-columns: 1.3fr .7fr; gap: 18px; align-items: center;
-      border: 1px solid var(--border); background: linear-gradient(135deg, rgba(124,58,237,.12), rgba(6,182,212,.12));
-      border-radius: 16px; padding: 20px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 18px;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(124, 58, 237, .12), rgba(6, 182, 212, .12));
+      border-radius: 16px;
+      padding: 20px;
     }
-    @media (max-width: 980px) { .cta { grid-template-columns: 1fr; } }
-    .cta h3 { margin: 0 0 8px; }
-    .cta p { margin: 0 0 12px; color: var(--muted); }
+
+    @media (max-width: 980px) {
+      .cta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta h3 {
+      margin: 0 0 8px;
+    }
+
+    .cta p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
 
     /* Footer */
-    footer { padding: 42px 0 80px; color: var(--muted); }
-    .footgrid { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: start; }
-    @media (max-width: 800px) { .footgrid { grid-template-columns: 1fr; } }
-    .footlinks { display: grid; grid-auto-flow: column; gap: 24px; }
-    .footlinks a { color: var(--muted); }
-    .footlinks a:hover { color: var(--text); }
-    .social { display: flex; gap: 12px; }
+    footer {
+      padding: 42px 0 80px;
+      color: var(--muted);
+    }
+
+    .footgrid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .footgrid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footlinks {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 24px;
+    }
+
+    .footlinks a {
+      color: var(--muted);
+    }
+
+    .footlinks a:hover {
+      color: var(--text);
+    }
+
+    .social {
+      display: flex;
+      gap: 12px;
+    }
 
     /* Reveal on scroll */
-    .reveal { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.show { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
-      .swirl { animation: none; }
-      .tilt { transition: none; }
+      .swirl {
+        animation: none;
+      }
+
+      .tilt {
+        transition: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="swirl" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
@@ -292,7 +684,7 @@
       <a class="brand" href="#" aria-label="Whirl.GG home">
         <span class="brand-logo" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M6 14c3 7 13 3 13-3 0-6-8-9-12-4" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M6 14c3 7 13 3 13-3 0-6-8-9-12-4" stroke="white" stroke-width="2.2" stroke-linecap="round" />
           </svg>
         </span>
         <span>Whirl.GG</span>
@@ -305,14 +697,18 @@
         <a href="#pricing">Pricing</a>
         <a class="btn ghost" href="#" aria-label="Docs">Docs</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2"/></svg>
+          <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" />
+          </svg>
           <span>Theme</span>
         </button>
         <a class="btn primary" href="#cta">Get Early Access</a>
       </nav>
       <div class="burger">
         <button class="theme-toggle" id="themeToggle2" aria-label="Toggle theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" />
+          </svg>
         </button>
         <button class="btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
       </div>
@@ -341,7 +737,8 @@
             <span class="grad">Anti‑cheat by design. Performance by default.</span>
           </h1>
           <p class="subhead">
-            Whirl.GG designs and protects experiences across Minecraft, Roblox, Unreal Engine — and platforms parallel to that.
+            Whirl.GG designs and protects experiences across Minecraft, Roblox, Unreal Engine — and platforms parallel
+            to that.
             From exploit mitigation to frame‑tight optimization, we deliver sleek UX with ironclad security.
           </p>
           <div class="hero-cta">
@@ -359,8 +756,14 @@
           <div class="glass">
             <div class="toolbar">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Integrity OK</span>
-              <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 1v4M12 19v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M1 12h4M19 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Live</span>
+              <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>Integrity OK</span>
+              <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 1v4M12 19v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M1 12h4M19 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>Live</span>
             </div>
             <div class="term" id="terminal" aria-live="polite" aria-atomic="false"></div>
           </div>
@@ -371,10 +774,12 @@
                 <svg viewBox="0 0 200 60" width="100%" height="100%">
                   <defs>
                     <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#7c3aed"/>
+                      <stop offset="0" stop-color="#22d3ee" />
+                      <stop offset="1" stop-color="#7c3aed" />
                     </linearGradient>
                   </defs>
-                  <polyline id="spark" fill="none" stroke="url(#grad)" stroke-width="2" points="0,50 20,45 40,46 60,40 80,30 100,38 120,22 140,28 160,18 180,26 200,14" />
+                  <polyline id="spark" fill="none" stroke="url(#grad)" stroke-width="2"
+                    points="0,50 20,45 40,46 60,40 80,30 100,38 120,22 140,28 160,18 180,26 200,14" />
                 </svg>
               </div>
               <div class="chip"><span class="dot green"></span>Low risk regions</div>
@@ -395,48 +800,69 @@
           <div>
             <div class="chip">Core capabilities</div>
             <h2 class="section-title">Security and performance engineered together</h2>
-            <p class="section-desc">Our runtime and services combine behavior analysis, integrity checks, and server‑authoritative design with zero‑overhead UX patterns to keep your players safe and engaged.</p>
+            <p class="section-desc">Our runtime and services combine behavior analysis, integrity checks, and
+              server‑authoritative design with zero‑overhead UX patterns to keep your players safe and engaged.</p>
           </div>
         </div>
         <div class="grid reveal">
           <div class="feature">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z" stroke="currentColor" stroke-width="2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z" stroke="currentColor" stroke-width="2" />
+              </svg>
             </div>
             <h3>Anti‑Cheat Engine</h3>
-            <p>Heuristics + ML tagging for speed, fly, aimbot, remote event spam, and tamper behavior with false‑positive dampening.</p>
+            <p>Heuristics + ML tagging for speed, fly, aimbot, remote event spam, and tamper behavior with
+              false‑positive dampening.</p>
           </div>
           <div class="feature">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
             </div>
             <h3>Integrity + Obfuscation</h3>
-            <p>CRC/attestation, code signing, and channel pinning to prevent DLL/script injection and client tampering.</p>
+            <p>CRC/attestation, code signing, and channel pinning to prevent DLL/script injection and client tampering.
+            </p>
           </div>
           <div class="feature">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
             </div>
             <h3>Server‑Authoritative</h3>
-            <p>Deterministic server checks, replayable events, and conflict‑free updates to neutralize client‑side exploits.</p>
+            <p>Deterministic server checks, replayable events, and conflict‑free updates to neutralize client‑side
+              exploits.</p>
           </div>
           <div class="feature">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 20c4.418 0 8-3.582 8-8S16.418 4 12 4 4 7.582 4 12s3.582 8 8 8z" stroke="currentColor" stroke-width="2"/><path d="M2 2l20 20" stroke="currentColor" stroke-width="2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 20c4.418 0 8-3.582 8-8S16.418 4 12 4 4 7.582 4 12s3.582 8 8 8z" stroke="currentColor"
+                  stroke-width="2" />
+                <path d="M2 2l20 20" stroke="currentColor" stroke-width="2" />
+              </svg>
             </div>
             <h3>Exploit Firewall</h3>
             <p>Rate‑limits, signature bans, and anomaly blocking at the edge to stop macro, packet, and API abuse.</p>
           </div>
           <div class="feature">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M2 20h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16v10H4z" stroke="currentColor" stroke-width="2" />
+                <path d="M2 20h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
             </div>
             <h3>Performance Pipeline</h3>
             <p>Frame‑tight netcode, entity LOD, and async asset streaming for smoother play and lower server CPU.</p>
           </div>
           <div class="feature">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 1v4M12 19v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M1 12h4M19 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 1v4M12 19v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M1 12h4M19 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
             </div>
             <h3>Live Telemetry</h3>
             <p>Per‑session trust scores, exploit heatmaps, and audit logs with webhooks and SIEM export.</p>
@@ -451,7 +877,8 @@
           <div>
             <div class="chip">Engines & platforms</div>
             <h2 class="section-title">Minecraft, Roblox, Unreal — and more</h2>
-            <p class="section-desc">Drop‑in SDKs and patterns for major engines. We meet you where your players are, then harden the stack end‑to‑end.</p>
+            <p class="section-desc">Drop‑in SDKs and patterns for major engines. We meet you where your players are,
+              then harden the stack end‑to‑end.</p>
           </div>
         </div>
         <div class="platforms reveal">
@@ -505,7 +932,8 @@
           <div>
             <div class="chip">Security model</div>
             <h2 class="section-title">Defense‑in‑depth, tuned for games</h2>
-            <p class="section-desc">We combine prevention, detection, and response. If an exploit lands, we isolate, rate‑limit, patch, and ship a rule within minutes.</p>
+            <p class="section-desc">We combine prevention, detection, and response. If an exploit lands, we isolate,
+              rate‑limit, patch, and ship a rule within minutes.</p>
           </div>
         </div>
         <div class="showcase reveal">
@@ -515,7 +943,8 @@
               <span class="chip"><span class="dot" style="background:#06b6d4"></span>Session attestation</span>
               <span class="chip"><span class="dot" style="background:#f59e0b"></span>Anomaly sandbox</span>
             </div>
-            <div class="term" style="height: 100%; background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3));">
+            <div class="term"
+              style="height: 100%; background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3));">
               > audit export | tail -f<br>
               [policy] net.ruleset:v4 applied (minecraft, roblox, ue)<br>
               [edge] burst remote spam → rate‑limit actor: 3s<br>
@@ -527,12 +956,12 @@
           </div>
           <div class="shot">
             <div class="term" style="height: 100%;">
-/* Pseudocode: server‑authoritative move check */
-if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
-  flag(player, 'speed-violation');
-  rollback(player, lastValidState);
-  if (score(player) > 0.8) softBan(player, 'speed');
-}
+              /* Pseudocode: server‑authoritative move check */
+              if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
+              flag(player, 'speed-violation');
+              rollback(player, lastValidState);
+              if (score(player) > 0.8) softBan(player, 'speed');
+              }
             </div>
           </div>
         </div>
@@ -545,23 +974,30 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
           <div>
             <div class="chip">Showcase</div>
             <h2 class="section-title">Built for scale and style</h2>
-            <p class="section-desc">Sleek UI kits, buttery transitions, and clean HUD patterns that don’t tax the frame.</p>
+            <p class="section-desc">Sleek UI kits, buttery transitions, and clean HUD patterns that don’t tax the frame.
+            </p>
           </div>
           <div><a class="btn" href="#" target="_blank" rel="noreferrer">Design kit</a></div>
         </div>
         <div class="grid reveal">
           <div class="feature">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" />
+              </svg></div>
             <h3>HUD & Menus</h3>
             <p>Minimal HUD, high‑contrast accessibility, and adaptive controller hints.</p>
           </div>
           <div class="feature">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" />
+              </svg></div>
             <h3>Performance</h3>
             <p>Up to 30% server CPU reduction and smoother p95 latency with smart batching.</p>
           </div>
           <div class="feature">
-            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M7 4v16" stroke="currentColor" stroke-width="2" />
+              </svg></div>
             <h3>Modular</h3>
             <p>Drop‑in components: chat, inventory, matchmaking, cosmetics.</p>
           </div>
@@ -606,10 +1042,14 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
               <h3>Tell us about your project</h3>
               <p>We’ll reach out with a tailored plan and a sandbox to try.</p>
               <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;">
-                <input required name="name" placeholder="Your name" style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
-                <input required type="email" name="email" placeholder="Email" style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
-                <input name="studio" placeholder="Studio / Team" style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
-                <select name="platform" style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
+                <input required name="name" placeholder="Your name"
+                  style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
+                <input required type="email" name="email" placeholder="Email"
+                  style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
+                <input name="studio" placeholder="Studio / Team"
+                  style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
+                <select name="platform"
+                  style="padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);">
                   <option value="Minecraft">Minecraft</option>
                   <option value="Roblox">Roblox</option>
                   <option value="Unreal Engine">Unreal Engine</option>
@@ -617,10 +1057,12 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
                   <option value="Custom">Custom</option>
                 </select>
               </div>
-              <textarea name="notes" placeholder="What are you building? Any pain points today?" rows="4" style="margin-top:10px; width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);"></textarea>
+              <textarea name="notes" placeholder="What are you building? Any pain points today?" rows="4"
+                style="margin-top:10px; width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--glass); color: var(--text);"></textarea>
               <div class="hero-cta" style="margin-top:10px;">
                 <button class="btn primary" type="submit">Request demo</button>
-                <span id="formStatus" class="chip" role="status" aria-live="polite" style="display:none;"><span class="dot green"></span>Sent — we’ll be in touch</span>
+                <span id="formStatus" class="chip" role="status" aria-live="polite" style="display:none;"><span
+                    class="dot green"></span>Sent — we’ll be in touch</span>
               </div>
             </div>
           </form>
@@ -634,12 +1076,15 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
       <div>
         <div class="brand" style="margin-bottom:6px;">
           <span class="brand-logo" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 14c3 7 13 3 13-3 0-6-8-9-12-4" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6 14c3 7 13 3 13-3 0-6-8-9-12-4" stroke="white" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
           </span>
           <strong>Whirl.GG</strong>
         </div>
         <small>© <span id="year"></span> Whirl.GG. All rights reserved.</small><br>
-        <small>Minecraft, Roblox, and Unreal Engine are trademarks of their respective owners. Whirl.GG is not affiliated with or endorsed by them.</small>
+        <small>Minecraft, Roblox, and Unreal Engine are trademarks of their respective owners. Whirl.GG is not
+          affiliated with or endorsed by them.</small>
       </div>
       <div style="display:grid; gap:10px; justify-items:end;">
         <div class="footlinks">
@@ -651,13 +1096,22 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
         </div>
         <div class="social">
           <a href="#" aria-label="Discord" title="Discord">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.369A19.791 19.791 0 0016.3 3c-.197.352-.422.83-.577 1.2a18.27 18.27 0 00-7.446 0c-.155-.37-.38-.848-.577-1.2a19.736 19.736 0 00-4.017 1.369C.9 9.12-.266 13.64.087 18.095A19.9 19.9 0 006.17 20c.48-.66.906-1.368 1.27-2.112-.7-.264-1.364-.594-1.988-.987.166-.12.328-.245.486-.373a13.8 13.8 0 0012.144 0c.158.128.32.253.486.373-.624.393-1.288.723-1.988.987.364.744.79 1.452 1.27 2.112a19.9 19.9 0 006.083-1.905c.407-5.026-.703-9.505-3.516-13.726zM8.68 14.65c-1.077 0-1.957-.99-1.957-2.21 0-1.217.865-2.21 1.957-2.21 1.099 0 1.972.993 1.957 2.21 0 1.22-.858 2.21-1.957 2.21zm6.64 0c-1.077 0-1.957-.99-1.957-2.21 0-1.217.865-2.21 1.957-2.21 1.099 0 1.972.993 1.957 2.21 0 1.22-.858 2.21-1.957 2.21z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.317 4.369A19.791 19.791 0 0016.3 3c-.197.352-.422.83-.577 1.2a18.27 18.27 0 00-7.446 0c-.155-.37-.38-.848-.577-1.2a19.736 19.736 0 00-4.017 1.369C.9 9.12-.266 13.64.087 18.095A19.9 19.9 0 006.17 20c.48-.66.906-1.368 1.27-2.112-.7-.264-1.364-.594-1.988-.987.166-.12.328-.245.486-.373a13.8 13.8 0 0012.144 0c.158.128.32.253.486.373-.624.393-1.288.723-1.988.987.364.744.79 1.452 1.27 2.112a19.9 19.9 0 006.083-1.905c.407-5.026-.703-9.505-3.516-13.726zM8.68 14.65c-1.077 0-1.957-.99-1.957-2.21 0-1.217.865-2.21 1.957-2.21 1.099 0 1.972.993 1.957 2.21 0 1.22-.858 2.21-1.957 2.21zm6.64 0c-1.077 0-1.957-.99-1.957-2.21 0-1.217.865-2.21 1.957-2.21 1.099 0 1.972.993 1.957 2.21 0 1.22-.858 2.21-1.957 2.21z" />
+            </svg>
           </a>
           <a href="#" aria-label="GitHub" title="GitHub">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.77.08-.76.08-.76 1.22.08 1.87 1.26 1.87 1.26 1.08 1.86 2.83 1.32 3.52 1 .11-.8.42-1.33.76-1.64-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.25-3.19-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.22a11.45 11.45 0 016 0c2.29-1.54 3.3-1.22 3.3-1.22.66 1.66.25 2.88.12 3.18.78.83 1.25 1.9 1.25 3.19 0 4.59-2.8 5.59-5.48 5.89.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .5z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.77.08-.76.08-.76 1.22.08 1.87 1.26 1.87 1.26 1.08 1.86 2.83 1.32 3.52 1 .11-.8.42-1.33.76-1.64-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.25-3.19-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.22a11.45 11.45 0 016 0c2.29-1.54 3.3-1.22 3.3-1.22.66 1.66.25 2.88.12 3.18.78.83 1.25 1.9 1.25 3.19 0 4.59-2.8 5.59-5.48 5.89.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .5z" />
+            </svg>
           </a>
           <a href="#" aria-label="X/Twitter" title="X">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.56 7.49L22 22h-6.828l-4.84-6.32L4.8 22H2l7.02-8.01L2.3 2h6.91l4.38 5.77L18.244 2zm-2.394 18h1.77L8.25 4h-1.9l9.5 16z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2H21l-6.56 7.49L22 22h-6.828l-4.84-6.32L4.8 22H2l7.02-8.01L2.3 2h6.91l4.38 5.77L18.244 2zm-2.394 18h1.77L8.25 4h-1.9l9.5 16z" />
+            </svg>
           </a>
         </div>
       </div>
@@ -692,9 +1146,9 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
       if (!el) return;
       const onMove = e => {
         const rect = el.getBoundingClientRect();
-        const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+        const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
         const dx = (e.clientX - cx) / rect.width, dy = (e.clientY - cy) / rect.height;
-        el.style.transform = `rotateX(${(-dy*6).toFixed(2)}deg) rotateY(${(dx*6).toFixed(2)}deg) translateZ(0)`;
+        el.style.transform = `rotateX(${(-dy * 6).toFixed(2)}deg) rotateY(${(dx * 6).toFixed(2)}deg) translateZ(0)`;
       };
       const reset = () => el.style.transform = 'rotateX(0) rotateY(0)';
       el.addEventListener('mousemove', onMove);
@@ -709,10 +1163,10 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
     // Counter animation
-    function countTo(el, to, dur=1200) {
+    function countTo(el, to, dur = 1200) {
       const start = performance.now(), from = 0;
       function frame(t) {
-        const p = Math.min((t - start)/dur, 1);
+        const p = Math.min((t - start) / dur, 1);
         const val = Math.floor(from + (to - from) * (1 - Math.pow(1 - p, 3)));
         el.textContent = val.toLocaleString();
         if (p < 1) requestAnimationFrame(frame);
@@ -743,11 +1197,11 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
     ];
     function pushLog() {
       if (!term) return;
-      const item = logs[Math.floor(Math.random()*logs.length)];
+      const item = logs[Math.floor(Math.random() * logs.length)];
       const line = document.createElement('div');
       line.className = `log-line ${item.type}`;
       const now = new Date();
-      const time = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+      const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       line.innerHTML = `<span class="time">[${time}]</span> ${item.msg}`;
       term.appendChild(line);
       term.scrollTop = term.scrollHeight;
@@ -778,4 +1232,5 @@ if (deltaPos.magnitude > threshold && !server.CanDash(player)) {
     }));
   </script>
 </body>
+
 </html>
