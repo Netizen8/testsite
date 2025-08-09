@@ -749,7 +749,7 @@
             <a class="btn ghost" href="#security">See how we block cheats</a>
           </div>
           <div class="hero-badges">
-            <div class="stat"><span id="countAttacks">0</span>/day <small>Attacks blocked</small></div>
+            <div class="stat"><span id="countAttacks">0</span><small>Attacks blocked</small></div>
             <div class="stat">99.99% <small>Uptime SLO</small></div>
             <div class="stat">2h <small>0‑day response</small></div>
           </div>
@@ -1142,7 +1142,7 @@
       function frame(t) {
         const p = Math.min((t - start) / dur, 1);
         const val = Math.floor(from + (to - from) * (1 - Math.pow(1 - p, 3)));
-        el.textContent = val.toLocaleString();
+        el.textContent = val.toLocaleString() + '/day';
         if (p < 1) requestAnimationFrame(frame);
       }
       requestAnimationFrame(frame);
